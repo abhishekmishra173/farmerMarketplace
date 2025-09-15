@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KhedFresh — Farmer Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="farmer.css" />
+  <link rel="icon" href="6873769.jpg" type="image">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <!-- language selector-->
+   <!-- <h1 id="title">Welcome</h1>
+  <p id="description">This is a demo website.</p>
+
+  <select id="languageSelector">
+    <option value="en">English</option>
+    <option value="mr">Marathi</option>
+  </select>  -->
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#">
+        <span class="logo__icon" aria-hidden="true">🥕</span>
+        <span class="logo__text">KhedFresh</span>
+      </a>
+
+      <!-- Mobile nav toggle (CSS-only) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" />
+      <label for="nav-toggle" class="nav-toggle-btn" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li id="li1"><a href="#products">Products</a></li>
+          <li id="li2"><a href="#categories">Categories</a></li>
+          <li id="li3"><a href="#farmers">Farmers</a></li>
+          <li id="li4"><a href="#how">How it works</a></li>
+          <li id="li5"><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <a class="btn btn--primary header__cta" href="#cta">Shop now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <h1>Fresh from local farms to your doorstep</h1>
+          <p>Support Khed’s farmers and get seasonal produce harvested the same day. Fair prices. Zero middlemen.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#products">Browse produce</a>
+            <a class="btn btn--ghost" href="#farmers">Meet farmers</a>
+          </div>
+          <ul class="hero__badges">
+            <li>✅ No pesticides on certified items</li>
+            <li>⏱️ 24–48h delivery in MH</li>
+            <li>🚚 Free delivery over ₹799</li>
+          </ul>
+        </div>
+        <figure class="hero__image" aria-label="Assorted fresh vegetables and fruits">
+          <div class="img-placeholder"><img src="https://media.istockphoto.com/id/503646746/photo/farmer-spreading-fertilizer-in-the-field-wheat.jpg?s=612x612&w=0&k=20&c=Lgxsjbz0jaYyQrvfzhyAsW2zELtshRP4AtLzkpmcLiE=" alt=""></div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="section">
+      <div class="container">
+        <header class="section__head">
+          <h2>Shop by category</h2>
+          <p>Find exactly what you need — ripe, seasonal, and locally sourced.</p>
+        </header>
+        <div class="grid grid--4">
+          <a class="card cat" href="#products" aria-label="Vegetables">
+            <div class="card__media img-placeholder"><img src="https://media.istockphoto.com/id/1454047113/photo/vegetable-at-a-farmers-market.jpg?s=612x612&w=0&k=20&c=bHxCQsaaD45L3Y2ixjF0104u2ZdYHoHRGdzDGxWkDSo=" alt=""></div>
+            <div class="card__body">
+              <h3>Vegetables</h3>
+              <p>Tomatoes, okra, cauliflower, leafy greens.</p>
+            </div>
+          </a>
+          <a class="card cat" href="#products" aria-label="Fruits">
+            <div class="card__media img-placeholder"><img src="https://media.istockphoto.com/id/995518546/photo/assortment-of-colorful-ripe-tropical-fruits-top-view.jpg?s=612x612&w=0&k=20&c=bz2zksjSPikOYm9I-mG-f8SAQWVpFsR4M_u4K9soLQ0=" alt=""></div>
+            <div class="card__body">
+              <h3>Fruits</h3>
+              <p>Mango, banana, guava, pomegranate.</p>
+            </div>
+          </a>
+          <a class="card cat" href="#products" aria-label="Dairy">
+            <div class="card__media img-placeholder"><img src="https://media.istockphoto.com/id/544807136/photo/various-fresh-dairy-products.jpg?s=612x612&w=0&k=20&c=U5T70bi24itoTDive1CVonJbJ97ChyL2Pz1I2kOoSRo=" alt=""></div>
+            <div class="card__body">
+              <h3>Dairy</h3>
+              <p>Milk, paneer, ghee, curd.</p>
+            </div>
+          </a>
+          <a class="card cat" href="#products" aria-label="Grains and pulses">
+            <div class="card__media img-placeholder"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt1Cw2rvYU5mWWAk8Enyix18ulMXQcs_IzLg&s" alt=""></div>
+            <div class="card__body">
+              <h3>Grains & Pulses</h3>
+              <p>Tur dal, chana, rice, whole wheat.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured products -->
+    <section id="products" class="section section--alt">
+      <div class="container">
+        <header class="section__head">
+          <h2>Fresh picks of the week</h2>
+          <p>Curated selection from trusted local farmers.</p>
+        </header>
+
+        <div class="grid grid--3">
+          <!-- Product card -->
+          <article class="card product">
+            <div class="card__media img-placeholder" aria-label="Tomatoes"><img src="https://study.com/cimages/multimages/16/tomatoes-1280859_640.jpg" alt=""></div>
+            <div class="card__body">
+              <h3>Heirloom Tomatoes</h3>
+              <p class="meta">500 g • Organic certified</p>
+              <div class="price">
+                <span class="price__current">₹89</span>
+                <span class="price__mrp">₹119</span>
+              </div>
+              <button class="btn btn--block">Add to cart</button>
+            </div>
+            <span class="badge badge--save">Save 25%</span>
+          </article>
+
+          <article class="card product">
+            <div class="card__media img-placeholder" aria-label="Okra"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJz6w8EZ7n7yod4x5qUxzv4frWnwevqxb5ww&s" alt=""></div>
+            <div class="card__body">
+              <h3>Tender Okra</h3>
+              <p class="meta">500 g • Pesticide-free</p>
+              <div class="price">
+                <span class="price__current">₹59</span>
+                <span class="price__mrp">₹75</span>
+              </div>
+              <button class="btn btn--block">Add to cart</button>
+            </div>
+            <span class="badge badge--fresh">Fresh harvest</span>
+          </article>
+
+          <article class="card product">
+            <div class="card__media img-placeholder" aria-label="Mango"><img src="https://www.shutterstock.com/image-photo/unripe-green-mangoes-hanging-on-600nw-2483878423.jpg" alt=""></div>
+            <div class="card__body">
+              <h3>Ratnagiri Mango</h3>
+              <p class="meta">1 kg • Seasonal</p>
+              <div class="price">
+                <span class="price__current">₹299</span>
+                <span class="price__mrp">₹349</span>
+              </div>
+              <button class="btn btn--block">Add to cart</button>
+            </div>
+            <span class="badge badge--limited">Limited</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Farmer profiles -->
+    <section id="farmers" class="section">
+      <div class="container">
+        <header class="section__head">
+          <h2>Meet the farmers</h2>
+          <p>Transparent sourcing from families you can know and trust.</p>
+        </header>
+
+        <div class="grid grid--3">
+         <article class="card farmer">
+            <div class="avatar" aria-hidden="true">SL</div>
+            <div class="card__body">
+              <h3>Swapnil Lokare</h3>
+              <p class="meta">Khed • Vegetables</p>
+              <p>Practices crop rotation and drip irrigation for water-efficient yields.</p>
+              <button class="pro"><a href="profile.html">see profile</a></button>
+            </div>
+          </article>
+          <article class="card farmer">
+            <div class="avatar" aria-hidden="true">AM</div>
+            <div class="card__body">
+              <h3>Abhishek Mishra</h3>
+              <p class="meta">Chiplun • Fruits</p>
+              <p>Grows mango and guava; uses natural pest traps to protect orchards.</p>
+              <button class="pro"><a href="profile.html">see profile</a></button>
+            </div>
+          </article>
+          <article class="card farmer">
+            <div class="avatar" aria-hidden="true">DG</div>
+            <div class="card__body">
+              <h3>Dnyaneshwar Garad</h3>
+              <p class="meta">Ratnagiri • Dairy</p>
+              <p>Small-batch ghee from grass-fed cows — weekly churned, made to order.</p>
+              <button class="pro"><a href="profile.html">see profile</a></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section section--alt">
+      <div class="container">
+        <header class="section__head">
+          <h2>How it works</h2>
+        </header>
+        <div class="steps">
+          <div class="step">
+            <span class="step__num">1</span>
+            <h3>Select produce</h3>
+            <p>Pick seasonal items directly from local farms.</p>
+          </div>
+          <div class="step">
+            <span class="step__num">2</span>
+            <h3>Farmers harvest</h3>
+            <p>Orders trigger harvest for maximum freshness.</p>
+          </div>
+          <div class="step">
+            <span class="step__num">3</span>
+            <h3>Delivered fast</h3>
+            <p>Eco-packaged delivery within 24–48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <header class="section__head">
+          <h2>What customers say</h2>
+        </header>
+        <div class="grid grid--3">
+          <blockquote class="quote">
+            <p>“The tomatoes tasted like childhood. Fresh and full of flavor.”</p>
+            <footer>— Neha, Khed</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“Love knowing who grew my food. Delivery is quick and reliable.”</p>
+            <footer>— Sagar, Chiplun</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“Best mangoes I’ve had in years. Will keep ordering every season.”</p>
+            <footer>— Aarti, Ratnagiri</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="cta">
+      <div class="container cta__inner">
+        <h2>Get farm-fresh goodness today</h2>
+        <p>Join thousands supporting local farmers. Your order makes a difference.</p>
+        <a class="btn btn--contrast" href="#products">Start shopping</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <a class="logo" href="#">
+          <span class="logo__icon" aria-hidden="true">🥕</span>
+          <span class="logo__text">KhedFresh</span>
+        </a>
+        <p class="footer__tagline">From local fields to your table.</p>
+      </div>
+      <div class="footer__links">
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#farmers">Farmers</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#cta">Shop now</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="footer__copy">©️ 2025 KhedFresh. All rights reserved.</p>
+    </div>
+  </footer>
+<script src="farmer.js"></script>
+<script src="appp.js" defer></script>
+</body>
+</html>
